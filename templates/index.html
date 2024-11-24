@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyglider</title>
+    <style>
+        body {
+            background-color: #8D986D;
+            background-image: url('/static/pixelart.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .titlecontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title{
+            color:red;
+            font-family: "Press Start 2P", system-ui;
+            font-size: 10vw;
+            /* background-color: skyblue; */
+        }
+        #plane{
+            position: absolute;
+            top:5%;
+            left: 25%;
+            width:40%;
+            height:40%;
+            transform: rotate(15deg);
+        }
+
+        .btn {
+            font-size: 1.2em;
+            font-family: 'Press Start 2P', cursive;
+            width: 200px;
+            height: 70px;
+            background: #ff9fac;
+            border: 0px;
+            position: relative;
+            box-shadow: 
+            inset -4px 2px 1px 1px grey,
+            inset -4px -2px 1px 1px lightgray,
+            inset 4px 0px 1px 1px lightgray;   
+        }
+
+        .btn:hover {
+            cursor: pointer;
+            background-color: #cc7b86;
+        }
+
+        .btn:active {
+            top: 5px;
+            box-shadow: 
+            -4px 2px 1px 1px grey,
+            -4px -2px 1px 1px lightgray,
+            4px 0px 1px 1px lightgray; 
+        }
+        
+    </style>
+<body>
+    <div class="titlecontainer">
+        <h1 class="title">SKYGLIDER</h1>
+    </div>
+   <center>
+    
+        <form action="/run_script" method="post">
+            <button type="submit" class="btn">PLAY</button>
+        </form>
+    </center>
+    <img id="plane" src="/static/plane.gif">
+
+</body>
+</html>
