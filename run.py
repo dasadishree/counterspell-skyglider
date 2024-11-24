@@ -25,6 +25,9 @@ gameOver= False
 restart_button = Actor('restart')
 restart_button.pos = (400, 420)
 
+game_over_image = Actor('gameover')
+game_over_image.pos = (400, 250)
+
 def reset_game():
     global score, gameOver, obstacles, runner, velocity_y
     score=0;
@@ -73,6 +76,8 @@ def update():
             obstacles.remove(obstacle)
             score += 1
 
+    
+    
     #collision
     if runner.collidelist(obstacles) != -1:
         gameOver=True
@@ -92,8 +97,8 @@ def draw():
             obstacle.x = 0
         restart_button.draw()
         # screen.draw.filled_rect(restart_button, 'purple')
-        screen.draw.text('Game Over', centerx=400, centery=270, color=(255, 0, 0), fontsize=60)
-        screen.draw.text('Score: '+str(score), centerx=400, centery=330, color=(255, 0, 127), fontsize=60)
+        game_over_image.draw()  # Draw the Game Over image
+        screen.draw.text('Score: '+str(score), centerx=400, centery=500, color=(255, 0, 127), fontsize=60)
     else:
         runner.draw()
         screen.draw.text('Score: '+str(score), (15, 10), color=(255, 0, 127), fontsize=30)
